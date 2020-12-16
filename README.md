@@ -1,5 +1,5 @@
 # R7000-touchpad
-touchpad driver
+
 
 
 
@@ -48,7 +48,8 @@ $reboot
 
 
 
-（1） . automatic installation:
+
+(1).automatic installation:
 
 After downloading, unzip and run as root install.sh If the prompt fails, please check whether the directory is complete or manually installed
 
@@ -56,7 +57,7 @@ After downloading, unzip and run as root install.sh If the prompt fails, please 
 $sudo chmod +x install.sh
 
 
-$sudo ./ install.sh
+$sudo ./install.sh
 
 
 $reboot
@@ -66,22 +67,22 @@ Will take effect after restart
 
 
 
-（2）.manual installation:
+(2).manual installation:
 
 
-1. Unzip and make after downloading
+1.Unzip and make after downloading
 
 
-$ make
+$make
 
 
-2. The I2C will be obtained- hid.ko Copy to specified path
+2.The I2C will be obtained- hid.ko Copy to specified path
 
 
-$ sudo cp /path/to/i2c- hid.ko /lib/modules/$(uname -r)/kernel/drivers/hid/i2c-hid/i2c- hid.ko
+$sudo cp /path/to/i2c- hid.ko /lib/modules/$(uname -r)/kernel/drivers/hid/i2c-hid/i2c- hid.ko
 
 
-3. Then add I2C_ hid.polling_ Mode = 1 to the kernel command line
+3.Then add I2C_ hid.polling_ Mode = 1 to the kernel command line
 
 
 Open / etc / default / grub as root using a text editor, and then
@@ -96,10 +97,9 @@ GRUB_ CMDLINE_ LINUX_ DEFAULT="quiet splash i2c_ hid.polling_ mode=1"
 Finally, save the changes.
 
 
-4. Final operation
+4.Final operation
 
-
-$ sudo update-grub
+$sudo update-grub
 
 
 $ sudo update-initramfs -u
